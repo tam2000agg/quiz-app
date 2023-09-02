@@ -6,8 +6,12 @@ function StartPage() {
   const history = useHistory();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    if(email){
+    localStorage.setItem('email', JSON.stringify(email));
     history.push('/quiz');
+    }
+    else
+    alert('Enter your email');
   };
 
   return (

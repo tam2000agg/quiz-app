@@ -1,5 +1,12 @@
+import { useHistory } from 'react-router-dom';
+
 function Report({ questions, userAnswers }) { // Receive props as arguments
-  return (
+  const history = useHistory();
+
+    if(!localStorage.getItem('email'))
+    history.push('/');
+
+    return (
     <div className="report">
       <h1>Quiz Report</h1>
       <table className="report-table">

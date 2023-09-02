@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import StartPage from './StartPage';
 import Report from './Report';
 import QuizProblems from './QuizProblems';
+import { useHistory } from 'react-router-dom';
+
 
 const Quiz = () => {
     const [questions, setQuestions] = useState([]);
@@ -24,6 +26,7 @@ const Quiz = () => {
                             <Report {...props} questions={questions} userAnswers={userAnswers} />
                         )}
                     />
+                    <Route path="*" component={StartPage} />
                 </Switch>
             </div>
         </Router>

@@ -13,6 +13,9 @@ function QuizProblems({
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const history = useHistory();
 
+    if(!localStorage.getItem('email'))
+    history.push('/');
+
     useEffect(() => {
         function fetchQuestions() {
             fetch(
